@@ -36,7 +36,7 @@ public class ArrayDemo {
 		
 		//4. 
 		int arr6[];
-		arr6 = new int[10];
+		arr6 = new int[10]; // All the elements in array will have value 0
 		
 		int arr7[] = new int[5];
 		
