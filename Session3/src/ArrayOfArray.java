@@ -22,12 +22,23 @@ public class ArrayOfArray {
 		System.out.println("arr2[0] is: "+arr2[0]);
 		System.out.println("arr2[0][0] is: "+arr2[0][0]);
 		
-		for(int i=0;i<arr2.length;i++){
+		System.out.println("--------------------");
+		
+		/*for(int i=0;i<arr2.length;i++){
 			for(int j=0;j<arr2[i].length;j++){
 				System.out.print(arr2[i][j]+"  ");
 			}
 			System.out.println();
+		}*/
+		
+		for(int[] a : arr2){
+			for(int num : a){
+				System.out.print(num+"  ");
+			}
+			System.out.println();
 		}
+		
+		System.out.println("--------------------");
 		
 		int[][][] arr3 = {
 							{
@@ -52,6 +63,19 @@ public class ArrayOfArray {
 		System.out.println("arr3[0][0] is: "+arr3[0][0]);
 		System.out.println("arr3[0][0][0] is: "+arr3[0][0][0]);
 		
+		System.out.println("--------------------");
+		
+		for(int[][] a : arr3){
+			for(int[] b : a){
+			    for(int num : b){	
+			    		System.out.print(num+"  ");
+			    }
+			    System.out.println();
+			}
+			System.out.println();
+		}
+		
+		System.out.println("--------------------");
 		
 	}
 

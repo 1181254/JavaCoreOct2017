@@ -84,6 +84,45 @@ public class ArrayDemo {
 		System.out.println();
 		
 		System.out.println("This is "+" an awesome day and i is: "+i);
+		
+		
+		int[] ar1 = {10,20,30,40,50};
+		// Copy Operation
+		int[] ar2 = new int[ar1.length];
+		
+		int[] ar3 = ar1; // Reference Copy
+		
+		for(i=0;i<ar1.length;i++){
+			ar2[i] = ar1[i];
+		}
+		
+		for(int num : ar2){
+			System.out.print(num+"  ");
+		}
+		
+		System.out.println();
+		
+		ar1[2] = 1000;
+		
+		System.out.println("ar1[2] is: "+ar1[2]);
+		System.out.println("ar3[2] is: "+ar3[2]);
+		
+		System.out.println("ar1 before resizing: "+ar1);
+
+		int[] temp = new int[ar1.length];
+		System.arraycopy(ar1, 0, temp, 0, ar1.length);
+		
+		ar1 = new int[10]; // Arrays are not Resized
+		// A new Array is created
+		
+		System.arraycopy(temp, 0, ar1, 0, temp.length);
+		
+		
+		System.out.println("ar1 after resizing: "+ar1);
+		
+		for(int num : ar1){
+			System.out.print(num+"  ");
+		}
 	}
 
 }
