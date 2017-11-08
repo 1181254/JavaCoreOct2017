@@ -1,5 +1,60 @@
 package co.auribises;
 
+/*
+ * Polymorphism
+------------
+
+	Compile Time Polymorphism
+	-------------------------
+		Early Binding
+		Static Binding
+
+
+		Binding is linking of function call with its definition.
+
+
+		void fun(){
+			//...
+		}
+
+		void fun(int i){
+			//...
+		}
+
+		o.fun();
+		o.fun(10);
+
+			- OVERLOADING
+				1. Constructor
+				2. Method
+
+				Name should be same, and inputs should be different
+				return type has no role
+
+				Inputs should be DIFFERENT
+					1. Number of Inputs
+					2. Type Of Inputs
+					3. Sequence of Inputs
+
+				class Demo{
+					void fun(){
+
+					}
+
+					void fun(int i){
+					
+					}
+
+					int fun(int i, int k){
+						
+						return 0;
+					}
+				}	
+
+
+
+ */
+
 class FaceBookLogin{
 	
 }
