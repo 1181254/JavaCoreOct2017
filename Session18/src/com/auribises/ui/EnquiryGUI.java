@@ -11,6 +11,7 @@ import java.awt.event.ActionListener;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.Statement;
 
 public class EnquiryGUI implements ActionListener{
@@ -109,20 +110,42 @@ public class EnquiryGUI implements ActionListener{
 				System.out.println("--Connection Created--");
 				
 				// 3. Write SQL Statement
-				String sql = "insert into Enquiry values(null,'"+name+"','"+phone+"','"+purpose+"')";
+				//String sql = "insert into Enquiry values(null,'"+name+"','"+phone+"','"+purpose+"')";
+				//String sql = "delete from Enquiry where name = '"+name+"'";
+				//String sql = "update Enquiry set name = '"+name+"', phone = '"+phone+"', purpose = '"+purpose+"' where eid = 5";
+				
+				String sql = "select * from Enquiry";
 				
 				// 4. Execute SQL Statement
 				Statement stmt = con.createStatement();
-				int i = stmt.executeUpdate(sql);
+				
+				ResultSet rs = stmt.executeQuery(sql);
+				
+				int id=0;
+				String nm="",ph="",pp="";
+				
+				while(rs.next()){
+					
+					id = rs.getInt(1);
+					nm = rs.getString(2);
+					ph = rs.getString(3);
+					pp = rs.getString(4);
+					
+					System.out.println(id+" - "+nm+" - "+ph+" - "+pp);
+				}
+				
+				/*int i = stmt.executeUpdate(sql);
 
 				if(i>0){
-					System.out.println("Enquiry Saved in DB "+i);
+					//System.out.println("Enquiry Saved in DB "+i);
+					//System.out.println("Enquiry Deleted from DB "+i);
+					System.out.println("Enquiry Updated in DB "+i);
 					tName.setText("");
 					tPhone.setText("");
 					tPurpose.setText("");
 				}else{
 					System.out.println("OOPS! Something Went Wrong");
-				}
+				}*/
 				
 				//5. Close the Connection
 				con.close();
