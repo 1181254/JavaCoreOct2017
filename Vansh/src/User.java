@@ -8,7 +8,8 @@ public class User {
 	String password;
 	int age;
 	private char gender;
-	String address;
+	//String address;
+	Address address; // Reference Variable | HAS-A Relation
 	
 	
 	// Methods
@@ -30,4 +31,31 @@ public class User {
 		return gender;
 	}
 	
+}
+
+class Address{
+	String adrsLine1;
+	String adrsLine2;
+	String city;
+	String state;
+	int zipCode;
+	String country;
+}
+
+// Containment or Nesting
+class A{
+	int a;
+	
+	void fun(){
+		System.out.println("a is: "+a);
+	}
+	
+	class B{
+		int b;
+		
+		void fun(){
+			System.out.println("a is: "+a);
+			System.out.println("b is: "+b);
+		}
+	}
 }

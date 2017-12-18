@@ -40,6 +40,12 @@ public class Main {
 		System.out.println("uRef1 Details: "+uRef3.name+" - "+uRef1.getGender());
 		System.out.println("uRef2 Details: "+uRef2.name+" - "+uRef2.getGender());
 		
+		Address aRef1 = new Address();
+		Address aRef2 = new Address();
+		Address aRef3 = new Address();
+		
+		uRef1.address = aRef1; // Reference Copy
+		
 		
 	}
 
